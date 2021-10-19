@@ -1,0 +1,61 @@
+<mat-card>
+  <form [formGroup]="form" (submit)="onSavePost()">
+    <mat-form-field>
+      <input matInput type="text" formControlName="title" placeholder="Title" />
+      <mat-error *ngIf="form.get('title')!.invalid">
+        Please enter a valid book title.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="category"
+        placeholder="Category"
+      />
+      <mat-error *ngIf="form.get('category')!.invalid">
+        Please enter a valid book category.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="number"
+        formControlName="pages"
+        placeholder="Pages"
+      />
+      <mat-error *ngIf="form.get('pages')!.invalid">
+        Please enter a valid book pages amount.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" formControlName="isbn" placeholder="ISBN" />
+      <mat-error *ngIf="form.get('isbn')!.invalid">
+        Please enter a valid book isbn.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="author"
+        placeholder="Author"
+      />
+      <mat-error *ngIf="form.get('author')!.invalid">
+        Please enter a valid book author.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        formControlName="editor"
+        placeholder="Editor"
+      />
+      <mat-error *ngIf="form.get('editor')!.invalid">
+        Please enter a valid book editor.
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Save Book</button>
+  </form>
+</mat-card>
